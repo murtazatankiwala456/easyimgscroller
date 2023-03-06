@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #023047;
+}
+.gallery-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10% auto;
+}
+
+.gallery {
+  display: flex;
+  width: 900px;
+  /* to make scroll only gallery div */
+  overflow-x: scroll;
+}
+.gallery div {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 20px;
+  padding: 10px;
+  /* to set the img according to its width, we use flex:none */
+  flex: none;
+}
+.gallery div img {
+  width: 100%;
+  filter: grayscale(100);
+  transition: 0.5s;
+}
+
+.gallery div img:hover {
+  filter: grayscale(0);
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+/* to hide scroll bar of gallery div after set next and back btn */
+.gallery::-webkit-scrollbar {
+  display: none;
+}
